@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'Githubcreds', branch: 'create_users', url: 'https://github.com/devsecopsmurali/practice-terrafrom.git'
+                git credentialsId: 'Githubcreds', branch: 'aws-org-account', url: 'https://github.com/devsecopsmurali/practice-terrafrom.git'
             }
         }
         // stage('Example Stage') {
