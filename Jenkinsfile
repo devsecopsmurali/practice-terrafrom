@@ -22,11 +22,6 @@ pipeline {
                 sh 'terraform init'
             }
         }
-        stage('Terraform refresh') {
-            steps {
-                sh "terraform refresh"
-            }
-        }
         stage('Terraform apply') {
             steps {
                 sh "terraform apply  -var aws_account_name='${params.ACCOUNTNAME}' -var aws_account_email='${params.ACCOUNTEMAIL}' --auto-approve"
