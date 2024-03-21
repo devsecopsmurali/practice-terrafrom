@@ -8,3 +8,11 @@ variable "aws_secret_key" {
 variable "aws_region" {
   description = "AWS region"
 }
+
+variable "aws_account_name" {
+  description = "AWS account name"
+}
+
+variable "aws_account_email" {
+  description = "AWS account email"
+}
