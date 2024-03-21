@@ -17,13 +17,6 @@ pipeline {
                 git credentialsId: 'Githubcreds', branch: 'aws-org-account', url: 'https://github.com/devsecopsmurali/practice-terrafrom.git'
             }
         }
-        // stage('Example Stage') {
-        //     steps {
-        //         script {
-        //             def username = params.ACCOUNTNAME
-        //         }
-        //     }
-        // }
          stage('Terraform init') {
             steps {
                 sh 'terraform init'
@@ -31,7 +24,7 @@ pipeline {
         }
         stage('Terraform apply') {
             steps {
-                sh 'terraform apply  -var="aws_account_name=params.ACCOUNTNAME" -var="aws_account_email=params.ACCOUNTNAME" --auto-approve'
+                sh 'terraform apply  -var aws_account_name='${params.ACCOUNTNAME}' -var aws_account_email='${params.ACCOUNTNAME}' --auto-approve'
             }
         }
     }
